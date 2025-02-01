@@ -62,7 +62,6 @@ class Node:
             return [[li[self.data[0]]]]
         else:
             op_index = self.left.data[-1]
-            #print('op_index', op_index, ops, 'self.left.data is', self.left.data, 'self.data is', self.data)
             op = ops[op_index]
             left = self.left.ComputeOperationsOnList(li,ops)
             right = self.right.ComputeOperationsOnList(li,ops)
@@ -140,7 +139,6 @@ def CheckSolution(li,target):
         #permutations are needed because our binary tree goes from left to right
         #and thus does not allow operation on a tuple with an i-ith and i+1-th
         #element of li
-        print(perm_li)
         for ops in operatorlistnodiv:
             for tree in trees_perm_reps:
                 x = tree.ComputeOperationsOnList(perm_li,ops)
